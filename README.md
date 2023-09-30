@@ -2,7 +2,7 @@
 An all in one friendly application to keep track of your car and road bike service history.
   - Oil changes, car washes etc...
   -  Keeping track of parts lifespan
-  -  Creates a local log of service history that is categorized if you ever decide to not keep on using my application.
+    -  Creates a local log of service history that is categorized if you ever decide to not keep on using my application.
 
 ### Curremt State 
 
