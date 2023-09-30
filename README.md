@@ -2,7 +2,7 @@
 A friendly application to keep track of your car, motorcycle and road bike service history.
   - Oil changes, car washes etc...
     - Keeping track of parts lifespan
-      - An all in one application to keep track of everything you forget to remember.
+    - An all in one application to keep track of everything you forget to remember.
 
 ### Curremt State 
 
