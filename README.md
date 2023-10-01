@@ -6,4 +6,4 @@ An all in one friendly application to keep track of your car and road bike servi
 ### Current Application 
 - Need to sort out a few bugs and make it look prettier but the functionality is there, I'll update as I get the time.
 
-<img width="1762" alt="Screenshot 2023-10-01 at 12 08 21 AM" src="https://github.com/Ounceleopard/Auto-Maintenance/assets/40043757/09a78786-c81b-434c-b588-b50caebea1ff">
+<img width="1762" alt="Screenshot 2023-10-01 at 12 12 48 AM" src="https://github.com/Ounceleopard/Auto-Maintenance/assets/40043757/bf3aab4e-7197-4ebc-9ee7-f4e0414cc5e4">
