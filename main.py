@@ -129,16 +129,18 @@ def search_service_history():
 
 # Create the main window
 app = tk.Tk()
-app.title("Auto Maintenance Tracker")
-app.geometry("800x800")  # Set initial window size
+app.title("Auto Maintenance")
+app.geometry("1650x950")  # Set initial window size (WxH)
 
 # Vehicle type selection
 vehicle_type_var = tk.StringVar()
 vehicle_type_var.set("Car")
 vehicle_type_label = tk.Label(app, text="Type:")
 vehicle_type_menu = tk.OptionMenu(app, vehicle_type_var, "Car", "Bike")
-vehicle_type_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
-vehicle_type_menu.grid(row=0, column=1, padx=10, pady=5, sticky="w")
+# Type button and menu
+vehicle_type_label.grid(row=0, column=0, padx=10, pady=5, sticky="w") # Type text
+vehicle_type_menu.grid(row=0, column=0, padx=10, pady=5) # Type menu
+
 
 # Create labels and entry fields
 vehicle_name_label = tk.Label(app, text="Name:")
@@ -151,7 +153,7 @@ service_date_label = tk.Label(app, text="Service Date:")
 service_date_calendar = DateEntry(app, width=12, background="darkblue", foreground="white", borderwidth=2)
 
 notes_label = tk.Label(app, text="Notes:")
-notes_text = tk.Text(app, height=8, width=40, wrap=tk.WORD)  # Adjust the height and width as needed, and set wrap=tk.WORD
+notes_text = tk.Text(app, height=6, width=40, wrap=tk.WORD)  # Adjust the height and width as needed, and set wrap=tk.WORD
 
 # Create a button to save service history
 save_button = tk.Button(app, text="Save Service History", command=save_service_history)
@@ -172,8 +174,8 @@ car_service_history_label.grid(row=8, column=0, padx=10, pady=5, columnspan=2)
 bike_service_history_label.grid(row=8, column=2, padx=10, pady=5, columnspan=2)
 
 # Create Treeview widgets to display service history without "Type" column
-car_service_history_tree = ttk.Treeview(app, columns=("Name", "Service", "Date", "Notes"), show="headings", selectmode='extended', height=30) # 30 box height
-bike_service_history_tree = ttk.Treeview(app, columns=("Name", "Service", "Date", "Notes"), show="headings", selectmode='extended', height=30)
+car_service_history_tree = ttk.Treeview(app, columns=("Name", "Service", "Date", "Notes"), show="headings", selectmode='extended', height=25) # 30 box height
+bike_service_history_tree = ttk.Treeview(app, columns=("Name", "Service", "Date", "Notes"), show="headings", selectmode='extended', height=25) # 30 box height (bottom of screen)
 
 for tree in [car_service_history_tree, bike_service_history_tree]:
     tree.heading("Name", text="Name")
@@ -205,14 +207,21 @@ search_button.grid(row=0, column=3, padx=5, pady=5)
 
 # Grid layout for labels and entry fields
 vehicle_name_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
-vehicle_name_entry.grid(row=1, column=1, padx=10, pady=5)
+vehicle_name_entry.grid(row=1, column=0, padx=10, pady=5)
+#service type
 service_type_label.grid(row=2, column=0, padx=10, pady=5, sticky="w")
-service_type_entry.grid(row=2, column=1, padx=10, pady=5)
+service_type_entry.grid(row=2, column=0, padx=10, pady=5)
+# Service date
 service_date_label.grid(row=3, column=0, padx=10, pady=5, sticky="w")
-service_date_calendar.grid(row=3, column=1, padx=10, pady=5)
+service_date_calendar.grid(row=3, column=0, padx=10, pady=5) # Calender 
+#notes
 notes_label.grid(row=4, column=0, padx=10, pady=5, sticky="w")
-notes_text.grid(row=4, column=1, padx=10, pady=5)
-save_button.grid(row=5, column=0, columnspan=2, pady=10)
+notes_text.grid(row=4, column=0, padx=10, pady=5) # Notes Box
+# save button
+#save_button.grid(row=5, column=0, columnspan=2, pady=10)
+save_button.grid(row=5, column=0, padx= 10, pady=10)
+
+
 
 # Display initial service history
 display_car_service_history()
