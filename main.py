@@ -189,7 +189,6 @@ bike_service_history_tree.grid(row=9, column=2, padx=10, pady=5, columnspan=2, s
 
 # Create a Text widget for displaying service history entries
 service_history_text = tk.Text(app, height=8, width=40, wrap=tk.WORD)
-service_history_text.grid(row=12, column=0, columnspan=4, padx=10, pady=10)
 
 # Create a search frame
 search_frame = tk.Frame(app)
