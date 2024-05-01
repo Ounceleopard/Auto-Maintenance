@@ -7,6 +7,7 @@ from tkinter import ttk
 from datetime import datetime
 from tkcalendar import DateEntry
 from tkinter import messagebox
+import time
 
 # Function to save service history to a log file
 def save_service_history():
@@ -36,10 +37,11 @@ def save_service_history():
     vehicle_name_entry.delete(0, tk.END)
     service_type_entry.delete(0, tk.END)
     service_date_calendar.set_date(datetime.now())
-    notes_text.delete("1.0", tk.END)  # Clear the Text widget 0
+    notes_text.delete("1.0", tk.END)  # Clear the Text widget
     
-    # Update the service history display immediately
-    display_service_history(0)
+    # Wait for a short time before refreshing the display
+    app.after(100, display_car_service_history)
+    app.after(100, display_bike_service_history)
 
 # Function to display car service history
 def display_car_service_history():
@@ -48,6 +50,7 @@ def display_car_service_history():
 # Function to display bike service history
 def display_bike_service_history():
     display_service_history("bike")
+
 
 # Function to display service history
 def display_service_history(vehicle_type=None):
@@ -73,6 +76,7 @@ def display_service_history(vehicle_type=None):
                         bike_service_history_tree.insert("", tk.END, values=(entry_data[0], entry_data[1], entry_data[2], entry_data[3]))
     except FileNotFoundError:
         pass
+
 
 
 # Function to delete selected service history entries
